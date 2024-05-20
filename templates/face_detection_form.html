@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Add your custom styles here if needed */
+        body {
+            padding: 20px;
+            background-color: #f4f4f4; /* Set your desired background color */
+        }
+        .container {
+            background-color: #fff; /* Set your desired background color */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 10px; /* Adjust the margin as needed */
+        }
+        label {
+            font-weight: bold; /* Set font weight to bold for labels */
+        }
+        #captureButton {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin-top: 0; /* No margin */
+        }
+        #submitButton {
+            margin-top: 10px; /* Adjust the margin as needed */
+        }
+        h2 {
+            background-color: #001f3f; /* Set dark blue background color */
+            color: #fff; /* Set text color to white */
+            padding: 10px; /* Add padding for spacing */
+            border-top-left-radius: 10px; /* Add border radius for the top-left corner */
+            border-top-right-radius: 10px; /* Add border radius for the top-right corner */
+            margin-top: 0; /* Remove top margin */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="mt-4">Face Detection Form</h2>
+    <form id="faceDetectionForm" class="mt-4" action="/process-image" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="contact">Contact No:</label>
+            <input type="tel" class="form-control" id="contact" name="contact" required>
+        </div>
+
+        <button type="submit" id="captureButton" class="btn btn-primary">Capture Photo</button>
+    </form>
+</div>
+
+</body>
+</html>

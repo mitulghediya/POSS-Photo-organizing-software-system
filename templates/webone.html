@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .img-wrapper {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .img-wrapper img {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-btn a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .download-btn a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Images</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Matching Images</h1>
+
+        <div class="image-container">
+            {% for image in matching_images %}
+                <div class="img-wrapper">
+                    <img src="{{ url_for('static', filename='temp_matching_images/' + image) }}" alt="{{ image }}">
+        
+                    <div class="download-btn">
+                        <a href="{{ url_for('get_matching_image', filename=image) }}" download>Download Image</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+             
+
+    </div>
+</body>
+</html>
